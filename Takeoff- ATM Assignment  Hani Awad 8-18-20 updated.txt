@@ -1,0 +1,356 @@
+//#########################################################
+//# Script Name:
+//#     ATM Basic functions
+//#     
+//# System:
+//#     ATM
+//#
+//# Project:
+//#     Takeoff bank ATM Phase 1
+//#
+//# Description:        
+//#     program that allows a user to deposit or get money from an ATM. Once the program is started, it         should accept input until the END command is sent.
+//#
+//# History:
+//#   Orig Author: Hani Awad
+//#   Orig Date:  08/8/2020
+//#
+//# Changes:
+//# Date        Author          Description
+//#
+//#
+//#
+//#
+//##########################################################
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+ 
+// Function that verify the accurucay of the customer info. This done by validation the info entered.
+    int Verify_CustomersInfo (int, int);
+ 
+// Function that give the customer an operation option 
+    int activity (int); 
+ 
+// Function that process deposit
+     double deposit (double) ;
+ 
+// Function that process Withdraw
+     double withdraw (double, double, double); 
+ 
+// Function that process balance query
+     double balance (double); 
+ 
+// Function that process Transaction_History query  
+    string transaction_history (string);
+    
+// Function that verify the ATM ammount
+    double  ATM_Ammount (double);
+    
+// Function that verify the ATM ammount 
+double Update_Customer_Current_Balance (double);
+
+//Function to read the info from customer data file
+array read_customer_info (std::array<T, N> ;)
+
+//Function to read/write the info from/to customer history data file
+array read/write_customer_history (std::array<T, N> ;)
+
+int main () 
+{
+
+int Account_ID; // customer's account number
+
+int PIN;			// customer's pin
+     
+int action;		// the type of action customer request
+     
+double atm_balance;	// ATM balance
+     
+double amount_requested;	// The amount of money customer withdrawing
+     
+double amount_deposted;	// The amount of money customer depositing
+     
+double current_balance;	// Customer's current_balance
+  
+// Request customer info 
+
+cout << "Welcome To Takeoff bank ATM" << endl;
+  
+ 
+cout << "Please enter your Account ID" << endl;
+  
+ 
+cin >> Account_ID;
+
+while (Account_ID<1000000000 && Account_ID>999999999)
+{
+    cout << "ERROR: Invalid Account_ID: " << endl;
+    cout<<"Enter your 10 digit Account ID please: ";
+    cin>>Account_ID;
+
+}
+ 
+cout << "Please enter the account PIN" << endl;
+  
+ 
+cin >> PIN;
+
+while (PIN<1000 && PIN>9999)
+{
+    cout << "ERROR: Invalid Pin: " << endl;
+    cout<<"Enter your 4 digit pin please: ";
+    cin>>PIN;
+
+}
+
+int Verify_CustomersInfo (int Account_ID, int PIN); 
+    
+int activity (int action); 
+ 
+switch (action){
+    
+case 1:
+    
+
+      // proceed to the deposit logic
+    int Deposit;
+    
+    double ATM_Ammount;
+    
+    double Update_Customer_Current_Balance ;
+ break;
+
+ 
+ 
+case 2:
+  
+    // proceed to the withdraw  logic
+  int withdraw; 
+ break;
+
+ 
+ 
+case 3:
+  
+    // proceed to the balance logic
+  int balance; 
+ break;
+
+case 4:
+ 
+    // proceed to the transaction info logic
+  string transaction_history; 
+ break;
+
+ case 5:
+  // proceed to Exit
+    Exit
+ break;
+  
+ 
+ 
+cout << "Thank you and have a good day";
+
+ 
+ }
+
+
+ 
+int Verify_CustomersInfo (int Account_ID, int PIN) 
+{
+  
+ 
+bool Verify_CustomersInfo = true;
+  
+ 
+bool Verify_CustomersInfo = false;
+  
+ 
+ 
+return 0;
+
+ 
+ 
+}
+
+
+int
+activity (int action) 
+{
+  
+ 
+cout << "What would you like to do" << endl << endl << endl << endl;
+  
+ 
+cout << "1) Deposit" << endl;
+  
+ 
+cout << "2) Withdraw" << endl;
+  
+ 
+cout << "3) Balance" << endl;
+  
+ 
+cout << "4) Transactions History" << endl;
+  
+ 
+cout << "5) Exit" << endl;
+  
+ 
+cout <<
+    
+"Please select action type (Deposit 1,Withdraw 2,Balance 3,Transaction History 4, Done 5): ";
+  
+ 
+cin >> action;
+
+ 
+} 
+ 
+double
+
+deposit (double amount_deposted) 
+{
+  
+ 
+cout << "how much do you like to deposit" << endl;
+  
+ 
+cin >> amount_deposted;
+  
+ 
+cout << "Thank you" << >>current_balance = current_balance + amount_deposted endl;
+ 
+return 0;
+
+ 
+ 
+}
+
+
+ 
+ 
+ 
+double withdraw (double amount, double current_balance, double ATM_Balance) 
+{
+  
+ 
+ 
+if amount
+    
+>current_balance 
+      then 
+ cout << "Your account doesn't have sufficient fund.";
+  
+ 
+  else
+  
+ 
+if the
+    
+amount <= current_balance 
+ then 
+ if the
+      
+amount =			// multiple of 20
+	then 
+ if the
+	
+amount <= atm balance 
+ then 
+	  // trigger the withdrawal
+	  cout << "thank you" <<;
+  
+ 
+cout Amount;		// need to add the correct syntax
+  else
+  
+ 
+cout << "Unable to dispense full amount requested at this time";
+  
+ 
+cout Amount;		// need to add the correct syntax
+  cout << "thank you" <<;
+  
+ 
+ 
+  else
+  
+ 
+cout << "amount has to be in multiple of $20" <<;
+  
+ 
+    // need to add logic to allow the user to reenter the amount
+    // need to add logic to repeat the above function 
+  
+double balance (double current_balance) {};
+string transaction_history (string history) {}; 
+ 
+double  ATM_Ammount (double ATM_Balance){};
+
+double Update_Customer_Current_Balance (double current_balance){ };
+ 
+array read_customer_info (std::array<T, N> ;) {};
+
+
+array read/write_customer_history (std::array<T, N> ;){};
+ 
+ 
+/* Unit Tests
+
+1. Verify the ATM initial amount is $10,000 
+   a. by looking directly in the new created csv file atm balance
+   b.run withdrawal scenario of 10,000, Withdrawal should be successful
+   c.  After that run withdrawal scenario of 10,000, Withdrawal should fail indicating that Unable to process your withdrawal at this time
+
+2. Verify the validation of account ID and PIN login
+    a. run a success login by entering correct Account ID and PINuser is presented with Account_ID successfully authorized
+    b.run a failed login by entering correct Account ID and wrong pin. User should be presented with a message Authorization failed
+    c.run a failed login by entering the correct wrong Account ID . User should be presented with a message Authorization failed
+    d. Attempt to enter characters instead of numbers in the account id and PIN user should be prevented 
+    e.Attempts to access any other commands, with the exception of logout and end, without an active authorization should result in:
+    Authorization required.
+    f. Verify the 2 minute ide time.
+        1.Enter a correct account id and wait 2 minute. User should be logged account
+        2.Enter a wrong account id and wait 2 minute. Users should not log in or proceed, the system should not crash.
+3   Verify the withdrawal functionality assuming the user has $10000 in his account
+    a. Withdraw less than 10.000 like 100. withdraw success. User should be presented with Amount dispensed: 100
+        Current balance: <balance>
+    b. withdraw $99. User should be alerted that withdrawal should be multiple of 20
+    c. withdraw more $11000. Users should be able to withdraw 9900 only and should be presented Unable to dispense the full amount requested at this time.
+    d. withdraw $100. User should not be able to withdraw  and should be presented Unable to process your withdrawal at this time
+    e. Deposit $20000 should be able to
+    f. Withdraw $20050 users should be able. A message should be presented with a message Amount dispensed: $<x>
+    g. Withdraw 0 users should be alerted that the minumum is &20
+    You have been charged an overdraft fee of $5. Current balance: <balance>
+    i. attempt to enter a negative number or character in the amount, User should not be allowed and the system should not crash.
+
+4. Verify a deposit functionality:
+    a. Deposit $100,customer should be able to and should receive a message with current balance
+    b. Deposit $107,customer should be able to and receive a message with current balance
+    c. attempt to enter a negative number or character in the amount, User should not be allowed and the system should not crash.
+    d. deposit 0 users should be alerted that the minumum is &.01
+
+5. Verify the Transaction_History functionality 
+    a. request a history for the above customers and verify the above transaction history appears in the following format
+    Otherwise, returns the transaction history in reverse chronological order (most recent transaction first) in the format:
+        <date> <time> <amount> <balance after transaction>
+            For example:
+            2020-02-04 13:04:22 -20.00 140.67
+            2020-02-04 13:04:01 60.44 160.67
+            2020-02-04 13:03:49 35.00 100.23
+
+    b. request a history for someone that did not do any action . No history should be coming up. system should not crash.
+    
+6. Verify the logout functionality
+    a. login and logout. user should be able to log out with a message Account <account_id> logged out
+        Attempt to perform an action. Users should not be able to perform any action without lo in a message should appear No account is currently authorized.
+
+*/ 
+
+        
+
+        
